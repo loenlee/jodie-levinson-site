@@ -103,6 +103,7 @@
     font-size: clamp(2.4rem, 5vw, 3.6rem);
     line-height: 1.08;
     margin: 18px 0 22px;
+    text-wrap: balance;
   }
   .hero h1 em{ font-style: italic; color: var(--brass-deep); }
   .hero p.lede{
@@ -113,7 +114,8 @@
     margin-top: 18px; font-size:0.85rem; color: var(--ink-soft); font-family:'IBM Plex Mono', monospace;
   }
 
-  .waveform-hero{ width:100%; height: auto; opacity: 0.7; }
+  .waveform-hero{ width:100%; max-width: 400px; height: auto; opacity: 0.7; display:block; margin: 0 auto; }
+  .hero-grid > div:last-child{ display:flex; align-items:center; justify-content:center; }
   .wf-line{ stroke: #8f897c; stroke-width: 2; fill: none; stroke-linecap: round; }
   @media (prefers-reduced-motion: reduce){
     .wf-line animate{ display: none; }
@@ -142,11 +144,12 @@
   @media (max-width: 900px){ .about-grid{ grid-template-columns: 1fr; } }
   .about-grid h2{ font-size: 2rem; margin-bottom: 20px; }
   .about-grid p{ color: var(--ink-soft); margin: 0 0 16px; }
-  .credential-chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 22px; }
+  .credential-chips{ display:flex; flex-wrap:wrap; gap: 0; margin-top: 22px; row-gap: 6px; }
   .chip{
-    font-family:'IBM Plex Mono', monospace; font-size:0.74rem; letter-spacing:0.04em;
-    padding: 6px 12px; border: 1px solid var(--line); border-radius:100px; color: var(--ink-soft);
+    font-family:'IBM Plex Mono', monospace; font-size:0.78rem; letter-spacing:0.03em;
+    color: var(--forest);
   }
+  .chip:not(:last-child)::after{ content: '·'; margin: 0 12px; color: var(--line); }
   .placeholder-note{
     margin-top: 18px; padding: 14px 16px; border-left: 3px solid var(--rose);
     background: rgba(198,132,120,0.08); font-size: 0.86rem; color: var(--ink-soft);
@@ -167,11 +170,11 @@
   /* SPECIALTIES */
   .tag-groups{ margin-top: 40px; display:grid; gap: 32px; }
   .tag-group-label{ font-size:0.9rem; font-weight:600; margin-bottom: 12px; color: var(--forest); }
-  .tags{ display:flex; flex-wrap:wrap; gap:9px; }
+  .tags{ display:flex; flex-wrap:wrap; row-gap: 8px; }
   .tag{
-    font-size:0.86rem; padding: 7px 14px; background: var(--paper-warm);
-    border-radius: 100px; border: 1px solid var(--line);
+    font-size:0.92rem; color: var(--ink-soft);
   }
+  .tag:not(:last-child)::after{ content: '·'; margin: 0 10px; color: var(--line); }
 
   /* CLIENT FOCUS band */
   .focus-band{
@@ -258,11 +261,10 @@
     <div class="wrap hero-grid">
       <div>
         <span class="eyebrow">Creative Arts Therapist · LCAT, MT-BC · New York City</span>
-        <h1>Some feelings don't have<br><em>words</em> yet. We'll find<br>another way in.</h1>
+        <h1>Some feelings don't have <em>words</em> yet. We'll find another way in.</h1>
         <p class="lede">I'm Jodie — a licensed creative arts therapist and board-certified music therapist. I help people move through anxiety, depression, relationship strain, and life transitions using music and creative process alongside traditional talk therapy.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="#contact">Schedule a free 15-minute consultation</a>
-          <a class="btn btn-ghost" href="#approach">How sessions work</a>
         </div>
         <div class="hero-note">In-person in Midtown Manhattan · Telehealth across New York State</div>
       </div>
