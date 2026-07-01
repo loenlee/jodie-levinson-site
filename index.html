@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jodie Beth Levinson, LCAT, MT-BC — Creative Arts Therapist, New York City</title>
+<meta name="description" content="Jodie Beth Levinson is a licensed creative arts therapist and board-certified music therapist in New York City, helping clients navigate anxiety, depression, relationship challenges, and life transitions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #EDE7DD;
+    --paper-warm: #E4DCCB;
+    --ink: #2A2620;
+    --ink-soft: #55503f;
+    --brass: #A9702F;
+    --brass-deep: #8a5a22;
+    --forest: #35473D;
+    --rose: #C68478;
+    --line: rgba(42,38,32,0.14);
+    --max: 1120px;
+  }
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    margin: 0;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  a{ color: inherit; }
+  .eyebrow{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass-deep);
+  }
+  .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 32px; }
+  section{ padding: 96px 0; }
+  @media (max-width: 720px){
+    section{ padding: 64px 0; }
+    .wrap{ padding: 0 20px; }
+  }
+
+  /* Waveform divider */
+  .wave-divider{ display:flex; justify-content:center; padding: 8px 0 0; }
+  .wave-divider svg{ width: 160px; height: 20px; opacity: 0.5; }
+
+  /* NAV */
+  header.site-nav{
+    position: sticky; top:0; z-index: 50;
+    background: rgba(237,231,221,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner{
+    max-width: var(--max); margin:0 auto; padding: 18px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-name{
+    font-family:'Fraunces', serif; font-size: 1.05rem; font-weight: 500;
+    text-decoration:none;
+  }
+  .nav-links{ display:flex; gap:28px; list-style:none; margin:0; padding:0; align-items:center; }
+  .nav-links a{ text-decoration:none; font-size:0.92rem; color: var(--ink-soft); }
+  .nav-links a:hover{ color: var(--brass-deep); }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'Inter'; font-size:0.9rem; font-weight:600;
+    padding: 11px 22px; border-radius: 100px;
+    text-decoration:none; border: 1px solid transparent;
+    transition: transform .15s ease, background .2s ease;
+  }
+  .btn-primary{ background: var(--brass); color: #FBF7EF; }
+  .btn-primary:hover{ background: var(--brass-deep); transform: translateY(-1px); }
+  .btn-ghost{ border-color: var(--ink); color: var(--ink); }
+  .btn-ghost:hover{ background: var(--ink); color: var(--paper); }
+  .menu-toggle{ display:none; }
+  @media (max-width: 800px){
+    .nav-links{ display:none; }
+    .menu-toggle{ display:block; }
+  }
+
+  /* HERO */
+  .hero{ padding-top: 90px; padding-bottom: 60px; position:relative; overflow:hidden; }
+  .hero-grid{
+    display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items:center;
+  }
+  @media (max-width: 900px){ .hero-grid{ grid-template-columns: 1fr; } }
+  .hero h1{
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 1.08;
+    margin: 18px 0 22px;
+  }
+  .hero h1 em{ font-style: italic; color: var(--brass-deep); }
+  .hero p.lede{
+    font-size: 1.12rem; color: var(--ink-soft); max-width: 46ch; margin-bottom: 30px;
+  }
+  .hero-ctas{ display:flex; gap:14px; flex-wrap:wrap; }
+  .hero-note{
+    margin-top: 18px; font-size:0.85rem; color: var(--ink-soft); font-family:'IBM Plex Mono', monospace;
+  }
+
+  .waveform-hero{ width:100%; height: auto; opacity: 0.7; }
+  .wf-line{ stroke: #8f897c; stroke-width: 2; fill: none; stroke-linecap: round; }
+  @media (prefers-reduced-motion: reduce){
+    .wf-line animate{ display: none; }
+  }
+
+  /* Photo placeholder */
+  .photo-frame{
+    aspect-ratio: 4/5; background: var(--paper-warm);
+    border: 1px solid var(--line); border-radius: 4px;
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    color: var(--ink-soft); font-family:'IBM Plex Mono', monospace; font-size: 0.8rem;
+    padding: 24px; position:relative; overflow: hidden;
+  }
+  .photo-frame img{
+    width:100%; height:100%; object-fit: cover; border-radius: 2px; display:block;
+  }
+  .photo-frame::before{
+    content:''; position:absolute; inset:10px; border:1px solid rgba(237,231,221,0.5);
+    pointer-events:none; z-index:2;
+  }
+
+  /* ABOUT */
+  .about-grid{
+    display:grid; grid-template-columns: 0.85fr 1.15fr; gap: 64px; align-items: start;
+  }
+  @media (max-width: 900px){ .about-grid{ grid-template-columns: 1fr; } }
+  .about-grid h2{ font-size: 2rem; margin-bottom: 20px; }
+  .about-grid p{ color: var(--ink-soft); margin: 0 0 16px; }
+  .credential-chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 22px; }
+  .chip{
+    font-family:'IBM Plex Mono', monospace; font-size:0.74rem; letter-spacing:0.04em;
+    padding: 6px 12px; border: 1px solid var(--line); border-radius:100px; color: var(--ink-soft);
+  }
+  .placeholder-note{
+    margin-top: 18px; padding: 14px 16px; border-left: 3px solid var(--rose);
+    background: rgba(198,132,120,0.08); font-size: 0.86rem; color: var(--ink-soft);
+    border-radius: 0 6px 6px 0;
+  }
+  .placeholder-note strong{ color: var(--forest); }
+
+  /* METHOD / STEPS */
+  .steps{ display:grid; grid-template-columns: repeat(3,1fr); gap: 40px; margin-top: 48px; }
+  @media (max-width: 800px){ .steps{ grid-template-columns: 1fr; } }
+  .step .step-num{
+    font-family:'Fraunces', serif; font-style:italic; font-size: 2.2rem; color: var(--brass);
+    display:block; margin-bottom: 10px;
+  }
+  .step h3{ font-size: 1.15rem; margin-bottom: 8px; }
+  .step p{ color: var(--ink-soft); font-size: 0.95rem; margin:0; }
+
+  /* SPECIALTIES */
+  .tag-groups{ margin-top: 40px; display:grid; gap: 32px; }
+  .tag-group-label{ font-size:0.9rem; font-weight:600; margin-bottom: 12px; color: var(--forest); }
+  .tags{ display:flex; flex-wrap:wrap; gap:9px; }
+  .tag{
+    font-size:0.86rem; padding: 7px 14px; background: var(--paper-warm);
+    border-radius: 100px; border: 1px solid var(--line);
+  }
+
+  /* CLIENT FOCUS band */
+  .focus-band{
+    background: var(--forest); color: #EFEAE0; padding: 64px 0; margin: 0;
+  }
+  .focus-band .wrap{ display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+  @media (max-width: 800px){ .focus-band .wrap{ grid-template-columns: 1fr; } }
+  .focus-band h3{ color:#EFEAE0; font-size:1.1rem; margin-bottom:10px; }
+  .focus-band p{ color: rgba(239,234,224,0.78); font-size: 0.92rem; margin:0; }
+
+  /* CREDENTIALS TIMELINE */
+  .timeline{ margin-top: 48px; border-left: 1px solid var(--line); padding-left: 32px; display:grid; gap: 32px; }
+  .tl-item{ position:relative; }
+  .tl-item::before{
+    content:''; position:absolute; left: -37px; top:4px; width:9px; height:9px;
+    border-radius:50%; background: var(--brass);
+  }
+  .tl-year{ font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color: var(--brass-deep); }
+  .tl-item h3{ font-size: 1.05rem; margin: 4px 0 4px; }
+  .tl-item p{ color: var(--ink-soft); margin:0; font-size:0.92rem; }
+
+  /* FEES */
+  .fees-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 40px; }
+  @media (max-width: 800px){ .fees-grid{ grid-template-columns: 1fr; } }
+  .fee-card{
+    background: var(--paper-warm); border: 1px solid var(--line); border-radius: 8px; padding: 26px;
+  }
+  .fee-card h3{ font-size:1rem; margin-bottom: 10px; }
+  .fee-card .price{ font-family:'Fraunces', serif; font-size: 1.9rem; margin-bottom: 6px; }
+  .fee-card ul{ margin:0; padding-left: 18px; color: var(--ink-soft); font-size: 0.9rem; }
+  .fee-card li{ margin-bottom: 4px; }
+
+  /* TESTIMONIALS placeholder */
+  .testimonial-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 40px; }
+  @media (max-width: 800px){ .testimonial-grid{ grid-template-columns: 1fr; } }
+  .testimonial-card{
+    border: 1px dashed var(--line); border-radius: 8px; padding: 24px;
+    color: var(--ink-soft); font-size: 0.9rem; background: rgba(255,255,255,0.25);
+  }
+  .testimonial-card .quote-mark{ font-family:'Fraunces', serif; font-size:2.4rem; color: var(--brass); line-height:0.5; display:block; margin-bottom: 12px; }
+
+  /* FAQ */
+  .faq-item{ border-bottom: 1px solid var(--line); padding: 22px 0; }
+  .faq-item h3{ font-size: 1.05rem; margin-bottom: 8px; }
+  .faq-item p{ color: var(--ink-soft); margin:0; font-size:0.94rem; }
+
+  /* CONTACT / FOOTER CTA */
+  .cta-band{
+    background: var(--ink); color: var(--paper); text-align:center; padding: 90px 0;
+  }
+  .cta-band .eyebrow{ color: var(--rose); }
+  .cta-band h2{ color: var(--paper); font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 16px 0 26px; }
+  .cta-band .btn-primary{ background: var(--brass); }
+  .cta-band .contact-lines{ margin-top: 30px; font-family:'IBM Plex Mono', monospace; font-size:0.85rem; color: rgba(237,231,221,0.7); }
+
+  footer{ padding: 40px 0; }
+  .footer-inner{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap: 16px;
+    font-size: 0.8rem; color: var(--ink-soft);
+  }
+  .crisis-note{ text-align:center; font-size:0.78rem; color: var(--ink-soft); padding-bottom: 28px; }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-name" href="#top">Jodie Beth Levinson</a>
+    <ul class="nav-links">
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#specialties">Specialties</a></li>
+      <li><a href="#credentials">Credentials</a></li>
+      <li><a href="#fees">Fees</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a class="btn btn-primary" href="#contact">Book a free consult</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Creative Arts Therapist · LCAT, MT-BC · New York City</span>
+        <h1>Some feelings don't have<br><em>words</em> yet. We'll find<br>another way in.</h1>
+        <p class="lede">I'm Jodie — a licensed creative arts therapist and board-certified music therapist. I help people move through anxiety, depression, relationship strain, and life transitions using music and creative process alongside traditional talk therapy.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#contact">Schedule a free 15-minute consultation</a>
+          <a class="btn btn-ghost" href="#approach">How sessions work</a>
+        </div>
+        <div class="hero-note">In-person in Midtown Manhattan · Telehealth across New York State</div>
+      </div>
+      <div>
+        <svg class="waveform-hero" viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+          <path class="wf-line" d="M0 60 Q 20 60, 40 60 T 80 60 T 120 60 T 160 60 T 200 60 T 240 60 T 280 60 T 320 60">
+            <animate attributeName="d" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" keyTimes="0; 0.5; 1" values="
+              M0 60 Q 20 60, 40 60 T 80 60 T 120 60 T 160 60 T 200 60 T 240 60 T 280 60 T 320 60;
+              M0 60 Q 20 40, 40 60 T 80 60 T 120 78 T 160 45 T 200 70 T 240 55 T 280 65 T 320 60;
+              M0 60 Q 20 60, 40 60 T 80 60 T 120 60 T 160 60 T 200 60 T 240 60 T 280 60 T 320 60" />
+          </path>
+          <!-- soft second line for depth, offset timing -->
+          <path class="wf-line" d="M0 60 Q 20 60, 40 60 T 80 60 T 120 60 T 160 60 T 200 60 T 240 60 T 280 60 T 320 60" style="opacity:0.45; stroke: #b3ada0;">
+            <animate attributeName="d" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" keyTimes="0; 0.5; 1" values="
+              M0 60 Q 20 60, 40 60 T 80 60 T 120 60 T 160 60 T 200 60 T 240 60 T 280 60 T 320 60;
+              M0 60 Q 20 72, 40 60 T 80 60 T 120 48, T 160 68 T 200 52 T 240 66 T 280 55 T 320 60;
+              M0 60 Q 20 60, 40 60 T 80 60 T 120 60 T 160 60 T 200 60 T 240 60 T 280 60 T 320 60" />
+          </path>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="wave-divider">
+    <svg viewBox="0 0 200 20"><path d="M0 10 Q 12 0, 24 10 T 48 10 T 72 10 T 96 10 T 120 10 T 144 10 T 168 10 T 192 10" stroke="#2A2620" stroke-width="1" fill="none"/></svg>
+  </div>
+
+  <!-- ABOUT / APPROACH -->
+  <section id="approach">
+    <div class="wrap about-grid">
+      <div class="photo-frame">
+        <img src="assets/jodie-headshot.jpg" alt="Portrait of Jodie Beth Levinson, Creative Arts Therapist">
+      </div>
+      <div>
+        <span class="eyebrow">My approach</span>
+        <h2>Talk therapy, plus a channel for what talk can't reach</h2>
+        <p>I've spent the last seven years working with individuals and families navigating anxiety, depression, relationship challenges, and major life transitions. My training combines verbal processing with music and creative arts, so we're never limited to only the feelings you can name out loud.</p>
+        <p>Sessions are collaborative and paced to you — some weeks that looks like conversation, others it looks like sound, rhythm, or creative expression doing the work words haven't gotten to yet. The goal throughout is the same: more emotional regulation, more insight, and a clearer, steadier relationship with yourself.</p>
+        <p>I earned my Master's in Music Psychotherapy from New York University and I'm a Licensed Creative Arts Therapist and Board-Certified Music Therapist in New York State.</p>
+        <div class="credential-chips">
+          <span class="chip">LCAT — NY License #002558</span>
+          <span class="chip">MT-BC</span>
+          <span class="chip">M.A. Music Psychotherapy, NYU '18</span>
+          <span class="chip">7 years in practice</span>
+        </div>
+        <div class="placeholder-note">
+          <strong>Placeholder —</strong> add 2–3 sentences here on what drew you to music therapy, or a short personal note in your own voice. First-person origin stories are one of the highest-converting sections on therapist sites — worth writing this one yourself.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHOD STEPS -->
+  <section style="background: var(--paper-warm);">
+    <div class="wrap">
+      <span class="eyebrow">What to expect</span>
+      <h2 style="font-size:2rem; margin-top:14px;">How we'd work together</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <h3>Free 15-minute consultation</h3>
+          <p>A short call to talk through what's bringing you in, answer your questions, and see if it feels like a fit — no commitment either way.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <h3>Getting to know you</h3>
+          <p>Early sessions focus on your history, what's happening now, and what you want to feel different. Mostly conversation, at your pace.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <h3>Ongoing, collaborative work</h3>
+          <p>We build a rhythm that fits you — talk therapy woven with music and creative process, revisited and adjusted as you grow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIALTIES -->
+  <section id="specialties">
+    <div class="wrap">
+      <span class="eyebrow">Focus areas</span>
+      <h2 style="font-size:2rem; margin-top:14px;">Who I work with</h2>
+      <div class="tag-groups">
+        <div>
+          <div class="tag-group-label">Common reasons people reach out</div>
+          <div class="tags">
+            <span class="tag">Anxiety</span>
+            <span class="tag">Depression</span>
+            <span class="tag">Trauma &amp; PTSD</span>
+            <span class="tag">Relationship issues</span>
+            <span class="tag">Life transitions</span>
+            <span class="tag">Self-esteem</span>
+            <span class="tag">Body image</span>
+            <span class="tag">Obsessive-compulsive (OCD)</span>
+            <span class="tag">Anger management</span>
+            <span class="tag">Women's issues</span>
+            <span class="tag">Peer &amp; school issues</span>
+            <span class="tag">Marital &amp; premarital</span>
+          </div>
+        </div>
+        <div>
+          <div class="tag-group-label">Modalities I draw from</div>
+          <div class="tags">
+            <span class="tag">Music therapy</span>
+            <span class="tag">Expressive arts</span>
+            <span class="tag">Cognitive behavioral (CBT)</span>
+            <span class="tag">Internal Family Systems (IFS)</span>
+            <span class="tag">Family systems</span>
+            <span class="tag">Gestalt</span>
+            <span class="tag">Humanistic</span>
+            <span class="tag">Interpersonal</span>
+            <span class="tag">Mindfulness-based (MBCT)</span>
+            <span class="tag">Trauma-focused</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT FOCUS BAND -->
+  <div class="focus-band">
+    <div class="wrap">
+      <div>
+        <h3>Who I see</h3>
+        <p>Individuals and families — preteens, teens, adults, and elders.</p>
+      </div>
+      <div>
+        <h3>A space built for you</h3>
+        <p>Gay-allied, non-binary-allied, and racial-justice-allied practice, with awareness of immuno-disorders and their emotional weight.</p>
+      </div>
+      <div>
+        <h3>How we meet</h3>
+        <p>In person at our Midtown Manhattan office, or by telehealth anywhere in New York State.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CREDENTIALS -->
+  <section id="credentials">
+    <div class="wrap">
+      <span class="eyebrow">Credentials &amp; training</span>
+      <h2 style="font-size:2rem; margin-top:14px;">Background</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-year">2018</div>
+          <h3>M.A., Music Psychotherapy — New York University</h3>
+          <p>Graduate training integrating music-based intervention with clinical psychotherapy practice.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">Since 2018</div>
+          <h3>Licensed Creative Arts Therapist (LCAT), New York State</h3>
+          <p>License #002558, verified.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">Since 2018</div>
+          <h3>Board-Certified Music Therapist (MT-BC)</h3>
+          <p>National board certification in music therapy.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">Today</div>
+          <h3>7 years in private and group practice</h3>
+          <p>Currently practicing at Liv Mental Health, 380 Lexington Avenue, New York, NY.</p>
+        </div>
+      </div>
+      <div class="placeholder-note">
+        <strong>Placeholder —</strong> add any continuing-education certificates, supervision experience, past workplaces, or publications you'd like visitors to see.
+      </div>
+    </div>
+  </section>
+
+  <!-- FEES -->
+  <section id="fees" style="background: var(--paper-warm);">
+    <div class="wrap">
+      <span class="eyebrow">Practical details</span>
+      <h2 style="font-size:2rem; margin-top:14px;">Fees &amp; insurance</h2>
+      <div class="fees-grid">
+        <div class="fee-card">
+          <h3>Individual session</h3>
+          <div class="price">$175</div>
+          <p style="color:var(--ink-soft); font-size:0.9rem;">Sliding scale available — ask if you may be eligible.</p>
+        </div>
+        <div class="fee-card">
+          <h3>Insurance accepted</h3>
+          <ul>
+            <li>Aetna</li>
+            <li>Carelon Behavioral Health</li>
+            <li>Cigna &amp; Evernorth</li>
+            <li>Meritain Health</li>
+          </ul>
+        </div>
+        <div class="fee-card">
+          <h3>Payment methods</h3>
+          <ul>
+            <li>American Express, Mastercard, Visa</li>
+            <li>HSA</li>
+            <li>PayPal, Venmo, Zelle</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS PLACEHOLDER -->
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">In their words</span>
+      <h2 style="font-size:2rem; margin-top:14px;">Client reflections</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card"><span class="quote-mark">"</span>[PLACEHOLDER — add a short client testimonial, with written permission and initials only]</div>
+        <div class="testimonial-card"><span class="quote-mark">"</span>[PLACEHOLDER — a second testimonial focused on a specific outcome or feeling]</div>
+        <div class="testimonial-card"><span class="quote-mark">"</span>[PLACEHOLDER — a third, ideally from a different client focus area]</div>
+      </div>
+      <div class="placeholder-note" style="margin-top:24px;">
+        <strong>Note —</strong> only use testimonials with explicit written client consent, and check your state licensing board's rules on therapist testimonials before publishing — some states restrict or prohibit them.
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap" style="max-width: 760px;">
+      <span class="eyebrow">Good questions</span>
+      <h2 style="font-size:2rem; margin-top:14px; margin-bottom: 10px;">FAQ</h2>
+      <div class="faq-item">
+        <h3>Do I need to be musical for music therapy to work?</h3>
+        <p>No. No musical background or skill is required — music is used as a tool for processing and expression, not performance.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is this different from traditional talk therapy?</h3>
+        <p>We use talk therapy as a foundation and add music and creative process where it's useful — you're never required to use them if conversation is what serves you best.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do you accept my insurance?</h3>
+        <p>I'm in-network with Aetna, Carelon Behavioral Health, Cigna/Evernorth, and Meritain Health. [PLACEHOLDER — add guidance on out-of-network reimbursement / superbills if offered.]</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do I get started?</h3>
+        <p>Book a free 15-minute consultation call below. We'll talk through what's going on and figure out next steps together.</p>
+      </div>
+      <div class="faq-item">
+        <h3>[PLACEHOLDER — add a question specific to your practice, e.g. session length, cancellation policy, or telehealth logistics]</h3>
+        <p>[PLACEHOLDER — answer]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / CTA -->
+  <section id="contact" class="cta-band">
+    <div class="wrap">
+      <span class="eyebrow">Ready when you are</span>
+      <h2>Let's start with a conversation —<br>no pressure, no commitment.</h2>
+      <a class="btn btn-primary" href="tel:+16463286607">Call (646) 328-6607</a>
+      <div class="contact-lines">
+        [PLACEHOLDER — professional email address] · New York, NY 10027<br>
+        Liv Mental Health, 380 Lexington Avenue, 4th Floor, New York, NY 10168<br>
+        In-person &amp; telehealth · [PLACEHOLDER — link to online booking / intake form]
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="crisis-note">
+  If you're in crisis or need immediate support, call or text 988 (Suicide &amp; Crisis Lifeline), available 24/7.
+</div>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> Jodie Beth Levinson, LCAT, MT-BC. All rights reserved.</span>
+    <span>NY License #002558 · This site does not provide medical advice or emergency services.</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
